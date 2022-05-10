@@ -3,16 +3,6 @@ import re
 from bs4 import BeautifulSoup
 
 
-# URL = "https://en.wikipedia.org/wiki/Audio_system_measurements"
-URL = "https://en.wikipedia.org/wiki/Alba_(rabbit)"
-page = requests.get(URL)
-
-# soup = BeautifulSoup(page.content, "html.parser")
-#
-# results = soup.find('title', 'Wikipedia:Citation needed')
-# print(results)
-# p_tags = results.find_all('p')
-# print(soup.find_all(title='Wikipedia:Citation needed'))
 print("""
     **** Wikipedia Citation Needed finder! ****
     ** Enter a complete Wikipedia URL to    **
@@ -21,6 +11,7 @@ print("""
     ******************************************
 """)
 URL = input("Enter a full wikipedia URL > ")
+page = requests.get(URL)
 
 
 def get_citations_needed_count(url):
@@ -47,6 +38,5 @@ def get_citations_needed_report(url):
 
 
 get_citations_needed_count(URL)
-
 
 get_citations_needed_report(URL)
